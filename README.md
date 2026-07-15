@@ -130,7 +130,7 @@ Ordner, und alle weiteren Befehle wirken dort.
 Pfad fehlt vermutlich das Leerzeichen, oder der Pfad wurde nicht
 vollständig eingefügt. Wiederhole die Schritte 1–5.
 
-**Tipp für alle weiteren Male:** Es geht auch ohne Kopieren — tippe
+Tipp für alle weiteren Male: Es geht auch ohne Kopieren — tippe
 `cd `, ziehe den Ordner einfach mit der Maus aus dem Finder ins
 Terminal-Fenster (der Pfad erscheint automatisch) und drücke Enter.
 ---
