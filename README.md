@@ -208,7 +208,7 @@ Terminal:
 ```bash
 pbpaste > profile/profile.yaml
 ```
-
+Hier erst den command ins terminal kopieren, noch NICHT Enter drücken, dann die YAML datei von claude "kopieren", dann im Terminal Enter drücken.
 (Das schreibt deine Zwischenablage in die richtige Datei.) Danach prüfen:
 
 ```bash
