@@ -1,0 +1,83 @@
+# profile.example.yaml - schema reference with dummy data.
+# Copy to profile.yaml (gitignored) and fill with real data.
+# Rules: every bullet has a stable id, DE + EN text, and tags.
+# The tailoring pipeline may ONLY select/rephrase bullets that exist here.
+# Schema is enforced by app/profile.py (pydantic); this file must always
+# validate - tests/test_profile_schema.py guards that in CI.
+
+basics:
+  name: "Max Mustermann"
+  email: "max@example.com"
+  phone: "+49 170 0000000"
+  location: "Utrecht, NL"
+  address: "Musterstraße 12, 3512 XX Utrecht"   # letter sender block
+  linkedin: "linkedin.com/in/example"
+  nationality: "German"          # optional, DE applications
+  birthdate: null                # optional, increasingly omitted
+
+headline_pool:                   # one is selected per application
+  - id: hl-01
+    text_de: "M.Sc. Innovation Sciences | Beratung & AfterSales-Erfahrung"
+    text_en: "M.Sc. Innovation Sciences | Consulting & Automotive Background"
+    tags: [consulting, general]
+
+stations:
+  - id: example-co
+    employer: "Example Consulting GmbH"
+    role_de: "Werkstudent Strategieberatung"
+    role_en: "Working Student, Strategy Consulting"
+    period: "2023-01 – 2023-12"
+    location: "Köln, DE"
+    fixed: false                 # fixed: true = always shown with default bullets
+    bullets:
+      - id: exco-01
+        default: true            # default: true = rendered in the untailored CV
+        text_de: "Koordination von 8 Kundenprojekten mit einem Rechnungsvolumen von 3,5 Mio. EUR"
+        text_en: "Coordinated 8 client projects with EUR 3.5m invoice volume"
+        tags: [stakeholder, finance, project-management]
+      - id: exco-02
+        text_de: "Aufbau eines KPI-Dashboards zur Projektsteuerung"
+        text_en: "Built a KPI dashboard for project steering"
+        tags: [data, tooling]
+
+education:
+  - id: edu-01
+    institution: "Utrecht University"
+    degree_de: "M.Sc. Innovation Sciences"
+    degree_en: "M.Sc. Innovation Sciences"
+    period: "2024 – 2026"
+    location: "Utrecht, NL"
+    details:
+      - id: edu-01-a
+        default: true
+        text_de: "Masterarbeit: …"
+        text_en: "Master's thesis: …"
+        tags: [research]
+
+extracurricular:               # optional; own CV section "Engagement" / "Extracurricular Activities"
+  - id: ec-01
+    text_de: "Vorstandsmitglied, Beispielverein e.V. (2021 – 2023)"
+    text_en: "Board member, Example Association (2021 – 2023)"
+    tags: [leadership]
+
+skills:
+  - { id: sk-01, label_de: "Python", label_en: "Python", tags: [tech] }
+  - { id: sk-02, label_de: "Stakeholder-Management", label_en: "Stakeholder management", tags: [consulting] }
+
+languages:                       # label format: "<Sprache>: <Niveau> (<GER-Stufe>)"
+  - { label_de: "Deutsch: Muttersprache (C2)",          label_en: "German: Native (C2)" }
+  - { label_de: "Englisch: Fließend (C1)",              label_en: "English: Fluent (C1)" }
+  - { label_de: "Niederländisch: Grundkenntnisse (A2)", label_en: "Dutch: Basic (A2)" }
+
+letter_fixed:
+  sender_block: true             # from basics
+  greeting_de: "Sehr geehrte Frau / Sehr geehrter Herr {name},"
+  greeting_de_unknown: "Sehr geehrte Damen und Herren,"
+  greeting_en: "Dear {name},"
+  greeting_en_unknown: "Dear Hiring Team,"
+  closing_de: "Mit freundlichen Grüßen"
+  closing_en: "Kind regards"
+  availability_de: "Verfügbar ab {date}."
+  availability_en: "Available from {date}."
+  location_note_de: "Ich bin aktuell in Utrecht ansässig, stehe für den ausgeschriebenen Standort jedoch gerne vor Ort zur Verfügung."
+  location_note_en: "I am currently based in Utrecht, but I am happy to be available on-site at the advertised location."

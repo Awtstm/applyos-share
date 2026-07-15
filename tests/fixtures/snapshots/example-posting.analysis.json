@@ -1,0 +1,30 @@
+{
+  "company": "Beispiel Firma GmbH",
+  "role_title": "Strategy Analyst",
+  "language": "de",
+  "contact_person": "Erika Beispiel",
+  "top_requirements": [
+    "Business Cases erstellen",
+    "Stakeholder-Management",
+    "Strategische Initiativen entwickeln und umsetzen",
+    "Projektbegleitung von Analyse bis Umsetzung",
+    "Excel und Power BI"
+  ],
+  "keywords": [
+    "Strategy Analyst",
+    "Business Cases",
+    "Strategieberatung",
+    "Projektmanagement",
+    "Excel",
+    "Power BI",
+    "SQL",
+    "Reporting",
+    "Stakeholder-Koordination",
+    "Geschäftsführung",
+    "Wirtschaftsingenieurwesen",
+    "BWL",
+    "Entscheidungsvorlagen"
+  ],
+  "seniority": "junior",
+  "notes": "Standort Köln, Vollzeit, Beginn ab sofort. Verhandlungssicheres Deutsch und sehr gutes Englisch erforderlich."
+}

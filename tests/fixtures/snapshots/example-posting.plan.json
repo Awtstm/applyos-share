@@ -1,0 +1,28 @@
+{
+  "headline_id": "hl-01",
+  "stations": [
+    {
+      "station_id": "example-co",
+      "bullets": [
+        {
+          "bullet_id": "exco-01",
+          "rephrased_text": "Koordination von 8 Kundenprojekten (3,5 Mio. EUR) inkl. Stakeholder-Abstimmung"
+        },
+        {
+          "bullet_id": "exco-02",
+          "rephrased_text": "Aufbau eines KPI-Dashboards zur Projektsteuerung und zum Reporting"
+        }
+      ]
+    }
+  ],
+  "extracurricular_ids": [
+    "ec-01"
+  ],
+  "skills_order": [
+    "sk-02",
+    "sk-01"
+  ],
+  "flags": {
+    "mention_location_note": true
+  }
+}

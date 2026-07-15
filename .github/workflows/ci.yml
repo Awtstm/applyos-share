@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Install Typst (pinned via .typst-version)
+        run: |
+          V="$(cat .typst-version)"
+          curl -sSL "https://github.com/typst/typst/releases/download/v${V}/typst-x86_64-unknown-linux-musl.tar.xz" | tar -xJ -C /tmp
+          echo "/tmp/typst-x86_64-unknown-linux-musl" >> "$GITHUB_PATH"
+
+      - name: Install Python deps
+        run: uv sync --python 3.12
+
+      - name: Lint
+        run: make lint
+
+      - name: Test
+        run: make test
+
+      - name: Golden compile test
+        run: make render-example

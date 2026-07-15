@@ -1,0 +1,153 @@
+/* ApplyOS UI — tokens & components per docs/04-design-system.md.
+   One accent (#B45309), neutrals do the rest. No gradients, no shadows,
+   1px borders create structure. */
+
+:root {
+  --accent: #B45309;
+  --accent-weak: #FDF3E7;
+  --ink: #1B2432;
+  --ink-2: #5B6472;
+  --line: #E3E6EB;
+  --bg: #FFFFFF;
+  --bg-2: #F7F8FA;
+  --s1: 4px; --s2: 8px; --s3: 16px; --s4: 24px; --s5: 40px;
+  --radius: 6px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: var(--font); color: var(--ink);
+  background: var(--bg-2); font-size: 15px; line-height: 1.45;
+}
+a { color: var(--accent); }
+
+/* ── nav ─────────────────────────────────────────────────────────── */
+header {
+  background: var(--bg); border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 10;
+}
+nav {
+  max-width: 1000px; margin: 0 auto; padding: 0 var(--s4);
+  display: flex; gap: var(--s4); align-items: center; height: 52px;
+}
+nav .brand { font-weight: 700; margin-right: var(--s3); }
+nav a {
+  color: var(--ink-2); text-decoration: none; height: 100%;
+  display: flex; align-items: center; border-bottom: 2px solid transparent;
+}
+nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+nav a:hover { color: var(--ink); }
+
+main { max-width: 1000px; margin: 0 auto; padding: var(--s4); }
+h1 { font-size: 20px; margin: var(--s3) 0; }
+h2 { font-size: 16px; margin: var(--s4) 0 var(--s2); }
+.muted { color: var(--ink-2); }
+.small { font-size: 13px; }
+
+/* ── buttons ─────────────────────────────────────────────────────── */
+button {
+  font: inherit; border-radius: var(--radius); padding: var(--s2) var(--s3);
+  cursor: pointer; border: 1px solid var(--line); background: var(--bg);
+  color: var(--ink);
+}
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.primary:hover:not(:disabled) { background: #9A4708; }
+button:hover:not(:disabled) { background: var(--bg-2); }
+button.primary:hover:not(:disabled) { background: #9A4708; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+/* text-align: buttons center by default — table cells must stay left */
+button.linklike { border: none; background: none; color: var(--accent); padding: 0; text-align: left; }
+
+/* ── inputs ──────────────────────────────────────────────────────── */
+input, textarea, select {
+  font: inherit; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: var(--s2); width: 100%;
+}
+input:focus, textarea:focus, select:focus, button:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent);
+}
+textarea { resize: vertical; }
+.paste-hero {
+  font-family: var(--mono); font-size: 13px; min-height: 260px; padding: var(--s3);
+}
+
+/* ── cards & layout ──────────────────────────────────────────────── */
+.card {
+  background: var(--bg); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: var(--s4); margin-bottom: var(--s3);
+}
+.row { display: flex; gap: var(--s3); align-items: center; flex-wrap: wrap; }
+.row > .grow { flex: 1; }
+.stack > * + * { margin-top: var(--s2); }
+
+/* ── review editor ───────────────────────────────────────────────── */
+.bullet {
+  display: flex; gap: var(--s2); align-items: flex-start;
+  padding: var(--s2) 0; border-bottom: 1px solid var(--line);
+}
+.bullet:last-child { border-bottom: none; }
+.bullet input[type="checkbox"] { width: auto; margin-top: 3px; }
+.bullet .text { flex: 1; cursor: text; }
+.bullet .text.edited::after { content: " ✎"; color: var(--ink-2); }
+.counter { font-size: 13px; color: var(--ink-2); text-align: right; }
+.counter.over { color: var(--ink); font-weight: 600; }
+
+.match-score { font-size: 32px; font-weight: 700; min-width: 64px; }
+
+/* ── report / notices ────────────────────────────────────────────── */
+.report { border-left: 3px solid var(--line); padding: var(--s2) var(--s3); }
+.report.ok { border-left-color: #3B7A57; }
+.report.fail { border-left-color: var(--accent); background: var(--accent-weak); }
+.report ul { margin: var(--s1) 0 0; padding-left: var(--s4); }
+.loading { color: var(--ink-2); transition: opacity 100ms; }
+
+/* ── table (pipeline) ────────────────────────────────────────────── */
+table { width: 100%; border-collapse: collapse; background: var(--bg);
+        border: 1px solid var(--line); border-radius: var(--radius); }
+th { background: var(--bg-2); text-align: left; font-weight: 600;
+     font-size: 13px; color: var(--ink-2); }
+th, td { padding: 0 var(--s3); height: 44px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: none; }
+td.right, th.right { text-align: right; }
+.th-sort { color: var(--ink-2); font-size: 13px; font-weight: 600; }
+.th-sort.active { color: var(--ink); }
+.badge {
+  display: inline-block; padding: 2px var(--s2); border-radius: var(--radius);
+  font-size: 13px; background: var(--bg-2); color: var(--ink-2);
+}
+.badge.attention { background: var(--accent-weak); color: var(--accent); }
+
+.muted-action { color: var(--ink-2); font-size: 13px; }
+.muted-action:hover { color: var(--ink); }
+
+/* ── pdf preview ─────────────────────────────────────────────────── */
+.preview { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
+.preview iframe {
+  width: 100%; height: 560px; border: 1px solid var(--line);
+  border-radius: var(--radius); background: var(--bg);
+}
+
+.preview-tile { cursor: zoom-in; border-radius: var(--radius); }
+.preview-tile iframe { pointer-events: none; display: block; }
+.preview-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* ── pdf overlay: neutral darkened backdrop, no gradients ────────── */
+.overlay-backdrop {
+  position: fixed; inset: 0; z-index: 50;
+  background: rgba(27, 36, 50, 0.55);
+  display: flex; align-items: center; justify-content: center;
+}
+.overlay-panel {
+  background: var(--bg); border: 1px solid var(--line);
+  border-radius: var(--radius); width: 94vw; height: 94vh;
+  display: flex; flex-direction: column;
+}
+.overlay-panel iframe { flex: 1; width: 100%; border: none;
+  border-radius: 0 0 var(--radius) var(--radius); }
+
+/* ── profile editor ──────────────────────────────────────────────── */
+.yaml-editor { font-family: var(--mono); font-size: 13px; min-height: 480px; }

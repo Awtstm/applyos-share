@@ -1,0 +1,30 @@
+# personal data — never commit
+profile/profile.yaml
+profile/Gespraechs-Fundus_Stationen.md
+references/
+output/
+*.db
+.env
+
+# real job postings (potentially copyrighted) — keep local
+tests/fixtures/postings/*
+!tests/fixtures/postings/example-posting.html
+!tests/fixtures/postings/README.md
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# typst artifacts
+*.pdf
+
+# os / editor
+.DS_Store
+.idea/
+.vscode/
+
+# claude code local settings
+.claude/settings.local.json

@@ -1,0 +1,46 @@
+{
+  "lang": "de",
+  "name": "Max Mustermann",
+  "headline": "M.Sc. Innovation Sciences",
+  "contact": [
+    "Utrecht, NL",
+    "+49 170 0000000",
+    "max@example.com",
+    "linkedin.com/in/example"
+  ],
+  "stations": [
+    {
+      "role": "Werkstudent Strategieberatung",
+      "employer": "Example Consulting GmbH",
+      "location": "Köln, DE",
+      "period": "01/2023 – 12/2023",
+      "bullets": [
+        "Koordination von 8 Kundenprojekten (3,5 Mio. EUR) inkl. Stakeholder-Abstimmung",
+        "Aufbau eines KPI-Dashboards zur Projektsteuerung und zum Reporting"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.Sc. Innovation Sciences",
+      "institution": "Utrecht University",
+      "location": "Utrecht, NL",
+      "period": "2024 – 2026",
+      "details": [
+        "Masterarbeit: …"
+      ]
+    }
+  ],
+  "extracurricular": [
+    "Vorstandsmitglied, Beispielverein e.V. (2021 – 2023)"
+  ],
+  "skills": [
+    "Stakeholder-Management",
+    "Python"
+  ],
+  "languages": [
+    "Deutsch: Muttersprache (C2)",
+    "Englisch: Fließend (C1)",
+    "Niederländisch: Grundkenntnisse (A2)"
+  ]
+}
