@@ -140,3 +140,5 @@ Start with step 1.
   (validiert beim Speichern) oder die Datei direkt editieren.
 - Faustregel für gute Bullets: konkretes Ergebnis + eigene Rolle + Zahl,
   wo es ehrlich möglich ist.
+
+  ## Note von Alex: Wenn das erledigt, dann zurück in die README.md und dort weiter lesen ;)
