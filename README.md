@@ -82,7 +82,7 @@ Prüfen:
 brew --version
 ```
 
-**Das solltest du sehen:** eine Versionsnummer wie `Homebrew 4.x.x` — keine
+**Das solltest du sehen:** eine Versionsnummer wie `Homebrew 6.x.x` — keine
 Meldung „command not found".
 
 ---
