@@ -101,18 +101,38 @@ wieder die normale Eingabezeile — keine rote Fehlermeldung.
 
 ---
 
-## Schritt 4 — In den ApplyOS-Ordner wechseln
+### Schritt 4: In den ApplyOS-Ordner wechseln
 
-```bash
-cd ~/Documents/applyos-share-main
-```
+Das Terminal muss wissen, wo der ApplyOS-Ordner liegt. Dafür wechselst du
+mit dem Befehl `cd` (kurz für „change directory") in den Ordner hinein.
 
-(Der Ordner heißt im Finder „Dokumente", im Terminal aber `Documents` —
-macOS übersetzt nur die Anzeige.)
+Der genaue Pfad hängt davon ab, wohin du den Ordner gelegt hast — so
+findest du ihn ganz ohne Tippen heraus:
 
-**Das solltest du sehen:** keine Meldung — die Eingabezeile zeigt jetzt
-`applyos-share-main` vor dem `%`.
+1. Öffne den Ordner `applyos-share-main` **nicht**, sondern suche ihn im
+   Finder, sodass du ihn als Symbol siehst (z. B. in „Dokumente").
+2. Klicke den Ordner **einmal** an, damit er markiert ist.
+3. Drücke **⌥ Option + ⌘ Cmd + C** — das kopiert den vollständigen
+   Pfad des Ordners in die Zwischenablage.
+   (Alternative: Rechtsklick auf den Ordner, dann die **Option-Taste ⌥
+   gedrückt halten** — aus „… kopieren" wird „… als Pfadname kopieren".)
+4. Wechsle ins Terminal und tippe `cd` gefolgt von **einem Leerzeichen**.
+5. Füge den Pfad mit **⌘ Cmd + V** ein und drücke **Enter**.
 
+Die Zeile sieht dann zum Beispiel so aus (dein Pfad kann anders lauten —
+das ist in Ordnung): cd /Users/alexander/Documents/applyos-share-main
+
+**Das solltest du sehen:** Keine Meldung — die Eingabezeile zeigt jetzt
+aber den Ordnernamen `applyos-share-main` an. Das heißt: Du bist „im"
+Ordner, und alle weiteren Befehle wirken dort.
+
+**Falls „no such file or directory" erscheint:** Zwischen `cd` und dem
+Pfad fehlt vermutlich das Leerzeichen, oder der Pfad wurde nicht
+vollständig eingefügt. Wiederhole die Schritte 1–5.
+
+**Tipp für alle weiteren Male:** Es geht auch ohne Kopieren — tippe
+`cd `, ziehe den Ordner einfach mit der Maus aus dem Finder ins
+Terminal-Fenster (der Pfad erscheint automatisch) und drücke Enter.
 ---
 
 ## Schritt 5 — Automatisches Setup laufen lassen
