@@ -21,7 +21,14 @@ Der schnellste Weg ist ein geführtes Interview mit Claude auf
    Fällen zweisprachig) und schicke ihn ab.
 4. Beantworte die Interview-Fragen. Nimm dir Zeit bei den Nachfragen zu
    Ergebnissen und Zahlen — genau die machen Bullets stark.
-5. Speichere die ausgegebene YAML als `profile/profile.yaml` in diesem Repo.
+5. Speichere die ausgegebene YAML als `profile/profile.yaml`. Am einfachsten:
+   die komplette YAML in Claude kopieren, dann im Terminal (im
+   ApplyOS-Ordner):
+
+   ```bash
+   pbpaste > profile/profile.yaml
+   ```
+
 6. Validiere sie:
 
    ```bash
@@ -30,7 +37,7 @@ Der schnellste Weg ist ein geführtes Interview mit Claude auf
 
    Keine Ausgabe = alles gut. Bei einer Fehlermeldung: kopiere sie zurück in
    die Claude-Unterhaltung („Der Validator meldet: …") und lass die YAML
-   korrigieren, dann erneut validieren.
+   korrigieren, dann erneut speichern und validieren.
 
 ---
 
