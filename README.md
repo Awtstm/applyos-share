@@ -22,6 +22,30 @@ jedem PDF steht dein Review.
   Leg in der Anthropic-Console ein Spend-Limit fest (z. B. 5 €/Monat), dann
   kann nichts anbrennen.
 
+> **Hinweis:** Diese Anleitung deckt nur **macOS** ab. Der Code läuft
+> grundsätzlich auch unter Linux/Windows, die Schritte unten (Homebrew etc.)
+> aber nicht eins zu eins.
+
+## GitHub-Zugang
+
+Das Repo ist privat — du brauchst drei Dinge, bevor `git clone` funktioniert:
+
+1. **GitHub-Konto:** kostenlos auf [github.com](https://github.com) anlegen
+   (falls noch keins vorhanden).
+2. **Einladung:** Der Repo-Besitzer lädt dich als Collaborator ein — du
+   bekommst eine E-Mail von GitHub, dort **Einladung annehmen**.
+3. **Authentifizierung** (empfohlener Weg über die GitHub-CLI):
+
+   ```bash
+   brew install gh
+   gh auth login
+   ```
+
+   Bei den Fragen wählen: **GitHub.com** → **HTTPS** → **Login with a web
+   browser**. Es erscheint ein Code — Enter drücken, den Code im Browser
+   eingeben, fertig. Danach funktionieren `git clone`/`git pull` ohne
+   Passwort-Gefrickel.
+
 ## Voraussetzungen (macOS)
 
 Du brauchst drei Werkzeuge. Öffne die Terminal-App und führe aus:
@@ -108,6 +132,10 @@ Alles geht auch im Terminal: `uv run applyos tailor <datei|url>`,
 - **„Anthropic API (400): credit balance too low":** Guthaben in der Console
   aufladen — das ist die Original-Fehlermeldung der API.
 - **typst nicht gefunden:** `brew install typst`, dann Terminal neu öffnen.
+- **„Address already in use" beim Start:** Der Server läuft bereits — z. B.
+  in einem anderen Terminal-Fenster oder -Tab. Dort mit `Ctrl+C` beenden und
+  neu starten; alternativ auf einem anderen Port starten:
+  `uv run applyos serve --port 8001` (dann `http://127.0.0.1:8001` öffnen).
 - Tests laufen mit `uv run pytest` (ohne API-Key werden die Live-Tests
   automatisch übersprungen).
 

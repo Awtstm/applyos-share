@@ -38,8 +38,9 @@ renders fixed-layout PDFs, tracks applications in a local CRM.
 
 ## Working conventions
 
-- Work in the phases defined in `docs/03-roadmap.md`. Complete a phase's acceptance
-  criteria before starting the next. Ask before deviating.
+- The roadmap in `docs/03-roadmap.md` is complete (phases 0-4 shipped). The
+  architecture rules above apply to all future changes; the phase-5 issues
+  are optional extensions, not a queue. Ask before larger deviations.
 - Small commits, imperative messages (`feat: …`, `fix: …`, `docs: …`).
 - Secrets: `ANTHROPIC_API_KEY` from environment / `.env` (gitignored). Never hardcode.
 - Tests: pytest for the tailoring pipeline (schema validity, no-fabrication checks
