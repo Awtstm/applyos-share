@@ -53,7 +53,11 @@ else
   ok "API-Key ist eingetragen"
 fi
 
-echo "4) Profil"
+echo "4) Ordner"
+mkdir -p output
+ok "output/ vorhanden (hier landen die fertigen PDFs)"
+
+echo "5) Profil"
 if [ -f profile/profile.yaml ]; then
   if uv run python -c "from app.profile import load_profile; load_profile('profile/profile.yaml')" 2>/dev/null; then
     ok "profile/profile.yaml vorhanden und valide"
@@ -67,7 +71,7 @@ else
   PROFILE_TODO=1
 fi
 
-echo "5) Selbsttest (ohne API-Key, Live-Tests werden übersprungen)"
+echo "6) Selbsttest (ohne API-Key, Live-Tests werden übersprungen)"
 if uv run pytest -q >/dev/null 2>&1; then
   ok "Testsuite grün"
 else
